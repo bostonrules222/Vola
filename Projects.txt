@@ -1,0 +1,20 @@
+Volume filter script = /
+Stock Profiler = /
+1m news sentiment = /
+Correlation script = /
+*News/Trending script?*
+
+Dailys
+	TopIV chng = /
+	TopMovechng = /
+	Top news chng = 0
+Hist analysis
+
+
+
+
+
+=TRIM(LEFT(D3,LEN(D3)-1))
+=IF(RIGHT(D3,1)="B",E3*1000000000,E3*1000000)
+
+

@@ -1,0 +1,25 @@
+import quandl
+import numpy as np
+import pandas as pd
+quandl.ApiConfig.api_key = '-Kiku-Vx2R6nNT7svt4D'
+stock = str("VOL/") + str(input('Enter ticker symbol '))
+stock_iv30 = quandl.get(stock.upper(), column_index='19')
+stock_hv30 = quandl.get(stock.upper(), column_index='1')
+hv30 = stock_hv30[['Hv10']].to_numpy()
+iv30 = stock_iv30[['IvMean10']].to_numpy()
+avgiv = np.average(iv30)
+avghv = np.average(hv30)
+medianiv = np.median(iv30)
+medianhv = np.median(hv30)
+print('AvgIV ')
+print(format(avgiv*100,'.2f'))
+print('AvgHV ')
+print(format(avghv*100,'.2f'))
+print('Diff ')
+print(format((avgiv - avghv)/avghv*100,'.2f'))
+print('MedianIV ')
+print(format(medianiv*100,'.2f'))
+print('MedianHV ')
+print(format(medianhv*100,'.2f'))
+print('Diff ')
+print(format((medianiv - medianhv)/medianhv*100,'.2f'))

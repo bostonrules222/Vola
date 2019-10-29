@@ -1,0 +1,5 @@
+import quandl
+aapl_iv60 = quandl.get('VOL/AAPL', column_index='31')
+aapl_hv60 = quandl.get('VOL/AAPL', column_index='4')
+hv60 = aapl_hv60[['Hv60']].to_numpy()
+iv60 = aapl_iv60[['IvMean60']].to_numpy()
