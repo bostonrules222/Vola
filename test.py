@@ -14,3 +14,4 @@ news_table = quandl.get_table('IFT/NSA', date=single_quote + ''.join(str(x + ','
 sentiment_table = news_table[['sentiment']].to_numpy()
 print(news_table)
 print(sentiment)
+print('test')
